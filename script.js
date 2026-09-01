@@ -1,4 +1,71 @@
-// ALTERE SOMENTE ESTAS DUAS LINHAS
-const WHATSAPP_NUMBER="5500000000000"; // DDI + DDD + número, somente números
-const LAUNCH_DATE="2026-12-31T20:00:00-03:00";
-const $=id=>document.getElementById(id);function tick(){let x=Math.max(0,new Date(LAUNCH_DATE)-Date.now()),d=Math.floor(x/864e5);x%=864e5;let h=Math.floor(x/36e5);x%=36e5;let m=Math.floor(x/6e4);x%=6e4;let s=Math.floor(x/1e3);$('d').textContent=String(d).padStart(2,'0');$('h').textContent=String(h).padStart(2,'0');$('m').textContent=String(m).padStart(2,'0');$('s').textContent=String(s).padStart(2,'0')}tick();setInterval(tick,1000);$('y').textContent=new Date().getFullYear();$('form').addEventListener('submit',e=>{e.preventDefault();let t=`Olá, Terlim Store!%0A%0AQuero ser avisado sobre o lançamento.%0A%0ANome: ${encodeURIComponent($('name').value)}%0AE-mail: ${encodeURIComponent($('email').value)}%0AWhatsApp: ${encodeURIComponent($('phone').value||'Não informado')}%0A%0AMensagem: ${encodeURIComponent($('msg').value||'Quero saber quando a loja estiver no ar.')}`;open(`https://wa.me/${WHATSAPP_NUMBER}?text=${t}`,'_blank')});
+/*
+  CONFIGURAÇÃO RÁPIDA
+  1. Troque WHATSAPP_NUMBER pelo número da Terlim, somente números com DDI (sem o +).
+  2. Troque CONTACT_EMAIL pelo e-mail real.
+  3. Troque LAUNCH_DATE pela data/hora de lançamento.
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  // CORREÇÃO 1: Removido o "+" do início para não quebrar a API do WhatsApp
+  const WHATSAPP_NUMBER = "5511932199533"; 
+  const CONTACT_EMAIL = "contato@terlimstore.com.br";
+  const LAUNCH_DATE = "2026-12-31T20:00:00-03:00";
+
+  // CORREÇÃO 2: Só roda após o DOM estar totalmente carregado no navegador
+  const emailText = document.getElementById("emailText");
+  if (emailText) {
+    emailText.textContent = CONTACT_EMAIL;
+  }
+
+  const form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        `Olá, Terlim Store!%0A%0A` +
+        `Nome: ${encodeURIComponent(name)}%0A` +
+        `E-mail: ${encodeURIComponent(email)}%0A` +
+        `WhatsApp: ${encodeURIComponent(phone || "Não informado")}%0A%0A` +
+        `Mensagem:%0A${encodeURIComponent(message)}`;
+
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
+    });
+  }
+
+  function updateCountdown() {
+    const target = new Date(LAUNCH_DATE).getTime();
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+
+    const days = Math.floor(diff / 86400000); diff %= 86400000;
+    const hours = Math.floor(diff / 3600000); diff %= 3600000;
+    const minutes = Math.floor(diff / 60000); diff %= 60000;
+    const seconds = Math.floor(diff / 1000);
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    if (daysEl && hoursEl && minutesEl && secondsEl) {
+      daysEl.textContent = String(days).padStart(2, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
