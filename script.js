@@ -1,19 +1,17 @@
 /*
   CONFIGURAÇÃO RÁPIDA
-  1. Troque WHATSAPP_NUMBER pelo número da Terlim, somente números com DDI (SEM O SINAL DE +).
-     Exemplo Brasil: 5511932199533
+  1. Troque WHATSAPP_NUMBER pelo número da Terlim, somente números com DDI (sem o +).
   2. Troque CONTACT_EMAIL pelo e-mail real.
-  3. Troque LAUNCH_DATE pela data/hora de lançamento. Use o fuso local do Brasil.
+  3. Troque LAUNCH_DATE pela data/hora de lançamento.
 */
 
-// O evento DOMContentLoaded garante que o JS espere a página HTML carregar totalmente antes de tentar alterar os campos.
 document.addEventListener("DOMContentLoaded", () => {
-
-  // Removido o "+" do número para o wa.me funcionar corretamente
+  // CORREÇÃO 1: Removido o "+" do início para não quebrar a API do WhatsApp
   const WHATSAPP_NUMBER = "5511932199533"; 
   const CONTACT_EMAIL = "contato@terlimstore.com.br";
   const LAUNCH_DATE = "2026-12-31T20:00:00-03:00";
 
+  // CORREÇÃO 2: Só roda após o DOM estar totalmente carregado no navegador
   const emailText = document.getElementById("emailText");
   if (emailText) {
     emailText.textContent = CONTACT_EMAIL;
@@ -70,5 +68,4 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
-
 });
