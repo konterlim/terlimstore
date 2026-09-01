@@ -6,7 +6,7 @@
   3. Troque LAUNCH_DATE pela data/hora de lançamento. Use o fuso local do Brasil.
 */
 
-const WHATSAPP_NUMBER = "5511932199533";
+const WHATSAPP_NUMBER = "+5511932199533";
 const CONTACT_EMAIL = "contato@terlimstore.com.br";
 const LAUNCH_DATE = "2026-12-31T20:00:00-03:00";
 
