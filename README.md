@@ -1,44 +1,23 @@
-# Terlim Store — Landing Page de Pré-Lançamento
+TERLIM STORE — LANDING PAGE DE PRÉ-LANÇAMENTO
 
-Esta versão foi criada do zero como uma **landing page de pré-lançamento**, não como uma tela simples de manutenção.
+Esta é uma página nova, feita do zero, inspirada na referência visual aprovada.
 
-## Estrutura correta para o GitHub Pages
-
-O arquivo `index.html` precisa ficar **na raiz do repositório**:
-
-```text
+ESTRUTURA OBRIGATÓRIA DO GITHUB:
 index.html
 style.css
 script.js
-README.md
-assets/
-  logo-terlim-store.png
-```
+assets/logo.png
+assets/products-hero.jpg
+assets/cintos.jpg
+assets/carteiras.jpg
+assets/relogios.jpg
+assets/perfumes.jpg
 
-Não coloque estes arquivos dentro de outra pasta no repositório.
+CONFIGURAÇÃO:
+1. Abra script.js.
+2. Troque WHATSAPP_NUMBER pelo WhatsApp real da loja, somente números. Ex.: 5511999999999
+3. Troque LAUNCH_DATE pela data e hora reais do lançamento.
+4. Suba os arquivos para a RAIZ do repositório do GitHub Pages.
+5. Não coloque index.html dentro de outra pasta.
 
-## WhatsApp
-
-Abra `script.js` e troque:
-
-```js
-const WHATSAPP_NUMBER = '5500000000000';
-```
-
-pelo número da Terlim Store, somente números. Exemplo:
-
-```js
-const WHATSAPP_NUMBER = '5511999999999';
-```
-
-## Contador
-
-Por padrão, o contador fica zerado. Para ativar, coloque uma data futura em `LAUNCH_DATE`, por exemplo:
-
-```js
-const LAUNCH_DATE = '2026-10-15T20:00:00-03:00';
-```
-
-## Importante
-
-Os links de Instagram, Facebook e TikTok estão como `#` até você colocar os endereços oficiais da loja.
+O formulário não precisa de PHP: ele abre o WhatsApp com os dados preenchidos.
