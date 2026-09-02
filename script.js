@@ -1,7 +1,7 @@
 // CONFIGURAÇÃO: coloque aqui o WhatsApp da Terlim Store, somente números.
-const WHATSAPP_NUMBER = '5500000000000';
+const WHATSAPP_NUMBER = '5511932199533';
 // Altere a data quando definir o lançamento. Formato ISO com horário de Brasília.
-const LAUNCH_DATE = '2026-09-16T20:00:00-03:00';
+const LAUNCH_DATE = '2026-11-16T20:00:00-03:00';
 
 function updateCountdown(){
   const diff = new Date(LAUNCH_DATE).getTime() - Date.now();
