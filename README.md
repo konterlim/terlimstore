@@ -1,29 +1,44 @@
-# Terlim Store — Página de manutenção
+# Terlim Store — Landing Page de Pré-Lançamento
 
-Página estática pronta para publicar no GitHub Pages enquanto o WordPress/LocalWP permanece local.
+Esta versão foi criada do zero como uma **landing page de pré-lançamento**, não como uma tela simples de manutenção.
 
-## 1. Antes de publicar
-Abra `script.js` e altere:
+## Estrutura correta para o GitHub Pages
 
-- `WHATSAPP_NUMBER`: número da Terlim com DDI, somente números.
-- `CONTACT_EMAIL`: e-mail real.
-- `LAUNCH_DATE`: data/hora prevista para o lançamento.
+O arquivo `index.html` precisa ficar **na raiz do repositório**:
 
-Exemplo:
-`5511999999999`
+```text
+index.html
+style.css
+script.js
+README.md
+assets/
+  logo-terlim-store.png
+```
 
-## 2. Publicar no GitHub Pages
-1. Crie um repositório no GitHub.
-2. Envie todos os arquivos desta pasta mantendo a pasta `assets`.
-3. No repositório, abra **Settings → Pages**.
-4. Em **Build and deployment**, selecione **Deploy from a branch**.
-5. Escolha a branch `main` e a pasta `/ (root)`.
-6. Salve e aguarde a publicação.
+Não coloque estes arquivos dentro de outra pasta no repositório.
 
-## 3. Cloudflare
-No Cloudflare, mantenha o domínio apontado para o GitHub Pages enquanto o WordPress ainda está no LocalWP.
+## WhatsApp
 
-Depois, quando o site WordPress estiver pronto para produção, você pode substituir os registros/destino pelos dados do seu servidor de produção.
+Abra `script.js` e troque:
 
-### Observação
-O formulário desta versão abre o WhatsApp com a mensagem preenchida. Não exige banco de dados nem hospedagem PHP.
+```js
+const WHATSAPP_NUMBER = '5500000000000';
+```
+
+pelo número da Terlim Store, somente números. Exemplo:
+
+```js
+const WHATSAPP_NUMBER = '5511999999999';
+```
+
+## Contador
+
+Por padrão, o contador fica zerado. Para ativar, coloque uma data futura em `LAUNCH_DATE`, por exemplo:
+
+```js
+const LAUNCH_DATE = '2026-10-15T20:00:00-03:00';
+```
+
+## Importante
+
+Os links de Instagram, Facebook e TikTok estão como `#` até você colocar os endereços oficiais da loja.
