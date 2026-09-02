@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#D35400">
+  <meta name="description" content="Terlim Store — estamos preparando uma nova experiência para você. Em breve, novidades.">
+  <meta property="og:title" content="Terlim Store — Em breve">
+  <meta property="og:description" content="Estamos preparando uma nova experiência para você.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo-terlim-store.png">
+  <title>Terlim Store — Em breve</title>
+  <link rel="icon" type="image/png" href="assets/logo-terlim-store.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Terlim Store">
+      <img src="assets/logo-terlim-store.png" alt="Terlim Store">
+    </a>
+    <div class="header-status"><span></span> Novo site em preparação</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> TERLIM STORE <span class="eyebrow-line"></span></div>
+        <h1>Uma nova experiência está <em>chegando.</em></h1>
+        <p class="hero-text">
+          Estamos preparando cada detalhe para entregar uma experiência ainda melhor.
+          Nosso novo site estará disponível em breve.
+        </p>
+
+        <div class="countdown" aria-label="Contagem regressiva">
+          <div class="time-box"><strong id="days">--</strong><small>DIAS</small></div>
+          <div class="time-box"><strong id="hours">--</strong><small>HORAS</small></div>
+          <div class="time-box"><strong id="minutes">--</strong><small>MIN</small></div>
+          <div class="time-box"><strong id="seconds">--</strong><small>SEG</small></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contato">Falar com a Terlim <span>↗</span></a>
+          <a class="btn btn-secondary" href="#novidades">Quero receber novidades</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Apresentação da Terlim Store">
+        <div class="visual-card">
+          <div class="card-top">
+            <span class="mini-label">TERLIM STORE</span>
+            <span class="card-dot"></span>
+          </div>
+          <img src="assets/logo-terlim-store.png" alt="Logo Terlim Store" class="hero-logo">
+          <div class="visual-message">
+            <span>Preparando algo especial</span>
+            <strong>Voltamos em breve.</strong>
+          </div>
+          <div class="progress"><i></i></div>
+          <div class="progress-labels"><span>CONSTRUINDO</span><span>QUASE LÁ</span></div>
+        </div>
+        <div class="floating-note note-one"><b>01</b><span>Qualidade<br>em cada detalhe</span></div>
+        <div class="floating-note note-two"><span class="spark">✦</span><span>Uma nova<br>fase começa</span></div>
+      </div>
+    </section>
+
+    <section class="trust-strip" id="novidades">
+      <div>
+        <span class="strip-icon">✦</span>
+        <strong>Fique por perto</strong>
+        <p>Cadastre seu contato para saber quando estivermos online.</p>
+      </div>
+      <a href="#contato" class="strip-link">Avisar-me no lançamento <span>→</span></a>
+    </section>
+
+    <section class="contact-section" id="contato">
+      <div class="section-intro">
+        <span class="section-kicker">CONTATO</span>
+        <h2>Quer falar com a gente?</h2>
+        <p>Envie uma mensagem. Enquanto nosso novo site não fica pronto, nossa equipe continua à disposição.</p>
+        <div class="contact-details">
+          <div><span>✉</span><div><small>E-MAIL</small><b id="emailText">contato@terlimstore.com.br</b></div></div>
+          <div><span>◉</span><div><small>WHATSAPP</small><b id="phoneText">(11) 93219-9533</b></div></div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label>Seu nome<input type="text" id="name" name="name" placeholder="Como podemos chamar você?" required></label>
+          <label>Seu e-mail<input type="email" id="email" name="email" placeholder="voce@email.com" required></label>
+        </div>
+        <label>WhatsApp <input type="tel" id="phone" name="phone" placeholder=""></label>
+        <label>Mensagem <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea></label>
+        <button class="btn btn-primary form-button" type="submit">Enviar pelo WhatsApp <span>↗</span></button>
+        <p class="form-note">Ao enviar, o WhatsApp será aberto com a mensagem pronta para você.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/logo-terlim-store.png" alt="Terlim Store">
+    <p>© <span id="year"></span> Terlim Store. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/terlimstore/" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="https://api.whatsapp.com/send/?phone=5511932199533&text=Ol%C3%A1%2C+Terlim+Store">Contato</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
